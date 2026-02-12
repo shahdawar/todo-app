@@ -26,7 +26,7 @@ function addTask() {
     id: tasks.length + 1,
     title: title,
     description: description,
-    status: "pending",
+    status: "Pending",
   };
 
   tasks.push(task);
@@ -38,12 +38,16 @@ function displayTasks() {
   tasksDiv.innerHTML = "";
   tasks.forEach((task) => {
     const taskElement = document.createElement("div");
+    taskElement.classList.add("task-card");
+    if (task.status === "Completed") {
+      taskElement.classList.add("completed");
+    }
     taskElement.innerHTML = `<p><strong>Id:</strong>${task.id}</p>
-    <p><strong>Title:</strong>${task.title}</p>
-    <p><strong>Description:</strong>${task.description}</p>
-    <p><strong>Status:</strong>${task.status}</p>
-     <p>Mark as complete:<button onclick="togglestatus(${task.id})">Click </button></p>
-     <p><button onclick="deleteTask(${task.id})">Delete Task</button>`;
+    <p><strong>Title:  </strong>${task.title}</p>
+    <p><strong>Description:  </strong>${task.description}</p>
+    <p><strong>Status: </strong>${task.status}</p>
+     <div class="tskbtns"><p><strong>Mark as complete: </strong> <button onclick="togglestatus(${task.id})">Click </button></p>
+     <p><button onclick="deleteTask(${task.id})">Delete Task</button></div>`;
     tasksDiv.appendChild(taskElement);
   });
   console.log(tasks);
@@ -51,8 +55,8 @@ function displayTasks() {
 function togglestatus(id) {
   for (var i = 0; i < tasks.length; i++) {
     if (tasks[i].id === id) {
-      if (tasks[i].status === "pending") {
-        tasks[i].status = "completed";
+      if (tasks[i].status === "Pending") {
+        tasks[i].status = "Completed";
       }
     }
   }
@@ -61,7 +65,7 @@ function togglestatus(id) {
 function deleteTask(id) {
   for (var i = 0; i < tasks.length; i++) {
     if (tasks[i].id === id) {
-      tasks.pop(tasks[i]);
+      tasks.splice(i, 1);
     }
   }
   displayTasks();

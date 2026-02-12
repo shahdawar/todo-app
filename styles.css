@@ -1,0 +1,109 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  background-color: rgb(196, 196, 77);
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 8px;
+  width: fit-content;
+  text-align: center;
+  margin: 10px auto;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 34vw;
+  margin: 10px auto;
+  border: 2px solid black;
+  padding: 60px;
+  height: auto;
+  border-radius: 12px;
+}
+.main input {
+  padding: 6px;
+  font-size: 22px;
+  width: 85%;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 10px;
+}
+.main textarea {
+  padding: 6px;
+  font-size: 22px;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 10px;
+}
+.txbtn {
+  display: flex;
+  align-items: center;
+}
+.txbtn button {
+  padding: 10px;
+  font-size: 22px;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: rgb(196, 196, 77);
+  width: 30%;
+  height: 11vh;
+}
+.txbtn button:hover {
+  background-color: rgb(59, 59, 45);
+  color: white;
+  transition: 0.2s ease-in-out;
+  border-color: black;
+}
+.task-card {
+  background-color: #f4f4f4;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  text-align: justify;
+  border: 2px solid black;
+}
+.task-card .tskbtns {
+  display: flex;
+  gap: 60px;
+  margin-top: 10px;
+}
+.task-card .tskbtns p:first-child button {
+  background-color: rgb(196, 196, 77);
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.task-card .tskbtns p:nth-child(2) button {
+  background-color: rgb(196, 196, 77);
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+}
+.task-card .tskbtns p:first-child button:hover {
+  background-color: rgb(59, 59, 45);
+  color: white;
+  transition: 0.2s ease-in-out;
+  border-color: black;
+}
+.task-card .tskbtns p:nth-child(2) button:hover {
+  background-color: rgb(59, 59, 45);
+  color: white;
+  transition: 0.2s ease-in-out;
+  border-color: black;
+}
+.task-card.completed {
+  background-color: rgb(178, 184, 178);
+}
