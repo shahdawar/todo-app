@@ -42,7 +42,7 @@ function displayTasks() {
     if (task.status === "Completed") {
       taskElement.classList.add("completed");
     }
-    taskElement.innerHTML = `<p><strong>Id:</strong>${task.id}</p>
+    taskElement.innerHTML = `<p><strong>Id: </strong>${task.id}</p>
     <p><strong>Title:  </strong>${task.title}</p>
     <p><strong>Description:  </strong>${task.description}</p>
     <p><strong>Status: </strong>${task.status}</p>
@@ -57,6 +57,8 @@ function togglestatus(id) {
     if (tasks[i].id === id) {
       if (tasks[i].status === "Pending") {
         tasks[i].status = "Completed";
+      } else {
+        tasks[i].status = "Pending";
       }
     }
   }
